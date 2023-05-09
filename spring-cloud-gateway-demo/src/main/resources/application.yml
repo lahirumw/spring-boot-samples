@@ -1,0 +1,30 @@
+spring:
+  profiles:
+    default: local
+  application:
+    name: Spring Cloud Gateway
+
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  cloud:
+    gateway:
+      routes:
+        - id: route1
+          uri: http://localhost:8081
+          predicates:
+            - Path=/booking/health
+        - id: route2
+          uri: http://localhost:8082
+          predicates:
+            - Path=/payment/health
+          filters:
+            - name: CircuitBreaker
+              args:
+                name: circuitBreaker
+                fallbackUri: forward:/fallback
+                statusCodes:
+                  - 404

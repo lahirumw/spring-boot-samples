@@ -23,6 +23,9 @@
     <modules>
         <module>spring-boot-testing</module>
         <module>spring-webflux-demo</module>
+        <module>spring-cloud-gateway-demo</module>
+        <module>booking-app</module>
+        <module>payment-app</module>
     </modules>
 
 </project>
