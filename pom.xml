@@ -26,6 +26,7 @@
         <module>spring-cloud-gateway-demo</module>
         <module>booking-app</module>
         <module>payment-app</module>
+      <module>spring-exception-handling</module>
     </modules>
 
 </project>
